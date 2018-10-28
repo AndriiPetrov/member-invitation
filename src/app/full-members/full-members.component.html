@@ -1,0 +1,23 @@
+<p>
+  full-members works!
+</p>
+<table>
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>eMail</th>
+    <th>No.Lean-Case Projects</th>
+    <th>Date Status Change</th>
+    <th>Date Last Log-in</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let member of members">
+    <td>{{ member.firstName }}</td>
+    <td>{{ member.lastName }}</td>
+    <td>{{ member.eMail }}</td>
+    <td>{{ member.noLeanCaseProject }}</td>
+    <td>{{ member.dateStatusChange }}</td>
+    <td>{{ member.dateLastLogin }}</td>
+    <td>{{ member.Action }}</td>
+  </tr>
+</table>
