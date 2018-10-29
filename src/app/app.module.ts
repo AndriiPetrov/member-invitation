@@ -7,13 +7,23 @@ import { FullMembersComponent } from './full-members/full-members.component';
 import { PendingMembersComponent } from './pending-members/pending-members.component';
 import { DeactivatedMembersComponent } from './deactivated-members/deactivated-members.component';
 import { MembersService } from './shared/members.service';
+import { SettingsComponent } from './settings/settings.component';
+import { MembersComponent } from './members/members.component';
+import { SubscriptionsComponent } from './subscriptions/subscriptions.component';
+import { BillingComponent } from './billing/billing.component';
+import { InviteMemberComponent } from './invite-member/invite-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullMembersComponent,
     PendingMembersComponent,
-    DeactivatedMembersComponent
+    DeactivatedMembersComponent,
+    SettingsComponent,
+    MembersComponent,
+    SubscriptionsComponent,
+    BillingComponent,
+    InviteMemberComponent
   ],
   imports: [
     BrowserModule,

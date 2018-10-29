@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { FullMembersComponent } from './full-members/full-members.component';
 import { PendingMembersComponent } from './pending-members/pending-members.component';
 import { DeactivatedMembersComponent } from './deactivated-members/deactivated-members.component';
+import { InviteMemberComponent } from './invite-member/invite-member.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "full-members"},
   { path: "full-members", component: FullMembersComponent},
+  { path: "full-members/invite-member", component: InviteMemberComponent},
   { path: "pending-members", component: PendingMembersComponent},
   { path: "deactivated-members", component: DeactivatedMembersComponent},
 ];

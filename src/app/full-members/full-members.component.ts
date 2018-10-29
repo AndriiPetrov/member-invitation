@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 // import { Member } from '../shared/member.model';
 import { MembersService } from '../shared/members.service';
 import { Member } from '../shared/member.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-full-members',
@@ -11,12 +12,16 @@ import { Member } from '../shared/member.model';
 export class FullMembersComponent implements OnInit {
   members: Member[]
   
-  constructor(private service: MembersService) { 
+  constructor(private service: MembersService, private router: Router) { 
 
   }
 
   ngOnInit() {
     this.members = this.service.data;
+  }
+
+  onInvite() {
+    this.router.navigate(["full-members", "invite-member"])
   }
 
 }
