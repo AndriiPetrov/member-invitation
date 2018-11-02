@@ -1,14 +1,32 @@
 <form>
-    <div>
+    <div class="form-group">
         <label for="firstName">First Name:</label>
-        <input name="firstName" >
+        <input class="form-control" name="firstName" id="firstName" #firstName>
     </div>
-    <div>
-        <label for="firstName">First Name:</label>
-        <input name="firstName" >
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input class="form-control" name="lastName" id="lastName" #lastName>
     </div>
-    <div>
-        <label for="firstName">First Name:</label>
-        <input name="firstName" >
+    <div class="form-group">
+        <label for="eMail">eMail:</label>
+        <input class="form-control" name="eMail" id="eMail" #eMail>
     </div>
+    <div class="form-group">
+      <label for="noLeanCaseProject">noLeanCaseProject:</label>
+      <input class="form-control" name="noLeanCaseProject" id="noLeanCaseProject" #noLeanCaseProject>
+    </div>
+    <div class="form-group">
+      <label for="dateStatusChange">dateStatusChange</label>
+      <input class="form-control" name="dateStatusChange" id="dateStatusChange" #dateStatusChange>
+    </div>
+    <div class="form-group">
+      <label for="dateLastLogin">dateLastLogin:</label>
+      <input class="form-control" name="dateLastLogin" id="dateLastLogin" #dateLastLogin>
+    </div>
+    <div class="form-group">
+      <label for="Action">Action:</label>
+      <input class="form-control" name="Action" id="Action" #Action>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="addMember(firstName, lastName, eMail, noLeanCaseProject, dateStatusChange, dateLastLogin, Action)">Submit</button>
 </form>

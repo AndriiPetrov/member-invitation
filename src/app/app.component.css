@@ -1,17 +1,21 @@
-nav a {
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 25px;
-}
+/*nav a {*/
+    /*text-decoration: none;*/
+    /*display: inline-block;*/
+    /*margin: 10px;*/
+    /*padding: 10px 25px;*/
+/*}*/
 
-nav a:hover {
-    background-color: rgba(59, 59, 230, 0.795);
-}
+/*nav a:hover {*/
+    /*background-color: rgba(59, 59, 230, 0.795);*/
+/*}*/
+
+/*nav a.selected {*/
+    /*background-color: rgb(27, 158, 114);*/
+    /*!* text-decoration-color: blue; *!*/
+    /*!* border-bottom: 5px; *!*/
+    /*!* border-bottom-color: rgb(219, 16, 175); *!*/
+/*}*/
 
 nav a.selected {
-    background-color: rgb(27, 158, 114);
-    /* text-decoration-color: blue; */
-    /* border-bottom: 5px; */
-    /* border-bottom-color: rgb(219, 16, 175); */
+  text-decoration-color: yellow;
 }
