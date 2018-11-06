@@ -9,21 +9,28 @@ import {SettingsComponent} from "./settings/settings.component";
 import {MembersComponent} from "./members/members.component";
 import {SubscriptionsComponent} from "./subscriptions/subscriptions.component";
 import {BillingComponent} from "./billing/billing.component";
+import { Guard } from "./guard";
+import { ExitGuard } from './exit.guard';
+
+const memberRoutes: Routes = [
+  { path: "full-members", component: FullMembersComponent},
+  { path: "pending-members", component: PendingMembersComponent},
+  { path: "deactivated-members", component: DeactivatedMembersComponent}
+]
 
 const routes: Routes = [
   { path: "", component: NavigationComponent},
   { path: "settings", component: SettingsComponent},
   { path: "members",  component: MembersComponent},
-  { path: "members/full-members", component: FullMembersComponent},
-  { path: "members/full-members/invite-member", component: InviteMemberComponent},
-  { path: "members/pending-members", component: PendingMembersComponent},
-  { path: "members/deactivated-members", component: DeactivatedMembersComponent},
-  { path: "subscriptions", component: SubscriptionsComponent},
-  { path: "billing", component: BillingComponent }
+  { path: "members", component: MembersComponent, children: memberRoutes},
+  // { path: "members/full-members/invite-member", component: InviteMemberComponent},
+  { path: "subscriptions", component: SubscriptionsComponent, canActivate: [Guard]},
+  { path: "billing", component: BillingComponent, canDeactivate: [ExitGuard ] }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [Guard, ExitGuard]
 })
 export class AppRoutingModule { }

@@ -13,6 +13,7 @@ import { SubscriptionsComponent } from './subscriptions/subscriptions.component'
 import { BillingComponent } from './billing/billing.component';
 import { InviteMemberComponent } from './invite-member/invite-member.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import {ChildComponent} from "./child-component";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     SubscriptionsComponent,
     BillingComponent,
     InviteMemberComponent,
-    NavigationComponent
+    NavigationComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
