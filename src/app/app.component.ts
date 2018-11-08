@@ -15,7 +15,15 @@ export class AppComponent {
   // @ViewChild("nameText")
   // nameParagraph: ElementRef;
 
-  name: string = "Mario";
+  // name: string = "Mario";
+
+  items: ["Apple Iphone Xxs", "Huawei Mate Pro 20", "Samsung Galaxy S10", "Motorola Moto Z"];
+
+  // condition: boolean = true;
+  //
+  // toggle() {
+  //   this.condition = !this.condition;
+  // }
 
   // change() {
   //   console.log(this.nameParagraph.nativeElement.textContent);

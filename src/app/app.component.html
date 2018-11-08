@@ -10,6 +10,34 @@
 <!--<p>{{nameText.textContent}}</p>-->
 <!--<button (click)="change()">Change</button>-->
 
-<child-comp>
-  <h3 #headerContent>Welcome {{name}}!</h3>
-</child-comp>
+<!--<child-comp>-->
+  <!--<h3 #headerContent>Welcome {{name}}!</h3>-->
+<!--</child-comp>-->
+
+<!--<div>-->
+  <!--<p [bold]="'28px'" [defaultSize]="'14px'">Hello Angular 7</p>-->
+  <!--<p>Angular 7 represent module architecture</p>-->
+<!--</div>-->
+
+<!--<p *ngIf="condition; else unset">-->
+  <!--Hello World-->
+<!--</p>-->
+<!--<ng-template #unset>-->
+  <!--<p>-->
+    <!--Bye World-->
+  <!--</p>-->
+<!--</ng-template>-->
+<!--<button (click)="toggle()">Toggle</button>-->
+<!--<div *ngIf="condition; then thenBlock else elseBlock"></div>-->
+<!--<ng-template #thenBlock>Then template</ng-template>-->
+<!--<ng-template #elseBlock>Else template</ng-template>-->
+<!--<button (click)="toggle()">Toggle</button>-->
+
+<!--<div *ngIf="condition; then thenBlock else elseBlock"></div>-->
+<!--<ng-template #thenBlock>Then template</ng-template>-->
+<!--<ng-template #elseBlock>Else template</ng-template>-->
+<!--<button (click)="toggle()">Toggle</button>-->
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
