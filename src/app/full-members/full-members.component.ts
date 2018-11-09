@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./full-members.component.css']
 })
 export class FullMembersComponent implements OnInit {
-  members: Member[]
-  
-  constructor(private service: MembersService, private router: Router) { 
+  members: Member[];
+
+  constructor(private service: MembersService, private router: Router) {
 
   }
 
@@ -21,7 +21,7 @@ export class FullMembersComponent implements OnInit {
   }
 
   onInvite() {
-    this.router.navigate(["full-members", "invite-member"])
+    this.router.navigate(['full-members', 'invite-member']);
   }
 
 }
