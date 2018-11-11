@@ -15,8 +15,10 @@ import { InviteMemberComponent } from './invite-member/invite-member.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {ChildComponent} from './child-component';
 import {BoldDirective} from './bold.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormModalComponent } from './form-modal/form-modal.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,20 @@ import { FormsModule } from '@angular/forms';
     InviteMemberComponent,
     NavigationComponent,
     ChildComponent,
-    BoldDirective
+    BoldDirective,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    NgbModule.forRoot()
   ],
   providers: [MembersService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    FormModalComponent
+  ]
 })
 export class AppModule { }

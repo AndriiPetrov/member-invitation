@@ -16,6 +16,6 @@ export class Member {
       this.noLeanCaseProject = noLeanCaseProject;
       this.dateStatusChange = dateStatusChange;
       this.dateLastLogin = dateLastLogin;
-      this.Action = Action;   
+      this.Action = Action;
   }
 }

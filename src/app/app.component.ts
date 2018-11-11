@@ -5,14 +5,24 @@ import { ChildComponent } from './child-component';
 
 import {TemplateRef, ViewChild} from '@angular/core';
 import {Component, OnInit} from '@angular/core';
-import {User} from './user';
+// import {User} from './user';
 import {UserService} from './user.service';
 import {Observable} from 'rxjs';
+// import { NgModel, FormGroup, FormControl } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
-export class Phone {
-  constructor(public title: string,
-              public price: number,
-              public company: string) {}
+import {FormGroup, FormControl, Validators, FormArray, FormBuilder } from '@angular/forms';
+
+// export class Phone {
+//   constructor(public title: string,
+//               public price: number,
+//               public company: string) {}
+// }
+
+export class User {
+  name: string;
+  email: string;
+  phoen: string;
 }
 
 @Component({
@@ -20,7 +30,29 @@ export class Phone {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
+
+  // myForm: FormGroup;
+  //   constructor(private formBuilder: FormBuilder) {
+
+  //       this.myForm = formBuilder.group({
+
+  //           'userName': ['Tom', [Validators.required]],
+  //           'userEmail': ['', [ Validators.required, Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}')]],
+  //           'phones': formBuilder.array([
+  //               ['+7', Validators.required]
+  //           ])
+  //       });
+  //   }
+  //   addPhone() {
+  //       (<FormArray>this.myForm.controls['phones']).push(new FormControl('+7', Validators.required));
+  //   }
+  //   submit() {
+  //       console.log(this.myForm);
+  //   }
+  // submit(form: NgForm) {
+  //   console.log(form);
+  // }
   // title = 'member-invitations';
   // members: Member[];
   // name: string = "Andrew";
@@ -48,83 +80,20 @@ export class AppComponent implements OnInit {
   //     // this.phones.push(this.phone);
   // }
 
-  @ViewChild('readOnlyTemplate') readOnlyTemplate: TemplateRef<any>;
-  @ViewChild('editTemplate') editTemplate: TemplateRef<any>;
+  // phone: Phone = new Phone('', 0, 'Samsung');
+  //   companies: string[] = ['Apple', 'Huawei', 'Xiaomi', 'Samsung', 'LG', 'Motorola', 'Alcatel'];
 
-  editedUser: User;
-  users: Array<User>;
-  isNewRecord: boolean;
-  statusMessage: string;
+  //   addPhone(title: NgModel, price: NgModel, comp: NgModel) {
+  //       console.log(title);
+  //       console.log(price);
+  //       console.log(comp);
+  //   }
 
-  constructor(private serv: UserService) {
-      this.users = new Array<User>();
-  }
-
-  ngOnInit() {
-      this.loadUsers();
-  }
-
-  // загрузка пользователей
-  private loadUsers() {
-      this.serv.getUsers().subscribe((data: User[]) => {
-              this.users = data;
-          });
-  }
-  // добавление пользователя
-  addUser() {
-      this.editedUser = new User(0, '', 0);
-      this.users.push(this.editedUser);
-      this.isNewRecord = true;
-  }
-
-  // редактирование пользователя
-  editUser(user: User) {
-      this.editedUser = new User(user.Id, user.Name, user.Age);
-  }
-  // загружаем один из двух шаблонов
-  loadTemplate(user: User) {
-      if (this.editedUser && this.editedUser.Id === user.Id) {
-          return this.editTemplate;
-      } else {
-          return this.readOnlyTemplate;
-      }
-  }
-  // сохраняем пользователя
-  saveUser() {
-      if (this.isNewRecord) {
-          // добавляем пользователя
-          this.serv.createUser(this.editedUser).subscribe(data => {
-              this.statusMessage = 'Данные успешно добавлены',
-              this.loadUsers();
-          });
-          this.isNewRecord = false;
-          this.editedUser = null;
-      } else {
-          // изменяем пользователя
-          this.serv.updateUser(this.editedUser.Id, this.editedUser).subscribe(data => {
-              this.statusMessage = 'Данные успешно обновлены',
-              this.loadUsers();
-          });
-          this.editedUser = null;
-      }
-  }
-    // отмена редактирования
-    cancel() {
-        // если отмена при добавлении, удаляем последнюю запись
-        if (this.isNewRecord) {
-            this.users.pop();
-            this.isNewRecord = false;
-        }
-        this.editedUser = null;
-    }
-    // удаление пользователя
-    deleteUser(user: User) {
-        this.serv.deleteUser(user.Id).subscribe(data => {
-            this.statusMessage = 'Данные успешно удалены',
-            this.loadUsers();
-        });
-    }
-}
+  //   onTitleChange() {
+  //     if ( this.phone.title === 'no') {
+  //       this.phone.title = 'unknown';
+  //     }
+  //   }
   // condition: boolean = true;
   //
   // toggle() {
@@ -145,3 +114,4 @@ export class AppComponent implements OnInit {
   // }
 
 // }
+  }

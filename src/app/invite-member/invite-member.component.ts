@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MembersService } from '../shared/members.service';
-import { Member } from "../shared/member.model";
+import { Member } from '../shared/member.model';
 
 @Component({
   selector: 'app-invite-member',
