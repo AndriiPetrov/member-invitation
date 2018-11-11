@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormModalComponent } from '../form-modal/form-modal.component';
-
+import { MembersService } from '../shared/members.service';
+import { Member } from '../shared/member.model';
 
 @Component({
   selector: 'app-members',
@@ -9,8 +10,9 @@ import { FormModalComponent } from '../form-modal/form-modal.component';
   styleUrls: ['./members.component.css']
 })
 export class MembersComponent implements OnInit {
+  members = this.service.data;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public service: MembersService) { }
 
   openFormModal() {
     const modalRef = this.modalService.open(FormModalComponent);
